@@ -8,8 +8,8 @@ async function checkWeather(city) {
   var data = await response.json();
   document.querySelector(".city").innerHTML = data.name;
   document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-  document.querySelector(".humidity").innerHTML = data.main.humidity + "km/h";
-  document.querySelector(".wind-speed").innerHTML = data.wind.speed;
+  document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+  document.querySelector(".wind-speed").innerHTML = data.wind.speed+ "km/h";
   if (data.weather[0].main == "clear") {
     weatherIcon.src = "images/clear.png";
   } else if (data.weather[0].main == "Clouds") {
